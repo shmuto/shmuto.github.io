@@ -3,10 +3,141 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>shmuto.github.io</title>
+<title>shmuto</title>
+<meta name="description" content="shmuto が公開しているブラウザ完結型のネットワーク系ツール集">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #fbfbf9;
+    --fg: #1b1b18;
+    --muted: #63635c;
+    --card: #ffffff;
+    --border: #e2e2dc;
+    --accent: #1a5d8f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17171a;
+      --fg: #e8e8e4;
+      --muted: #9a9a94;
+      --card: #202024;
+      --border: #32323a;
+      --accent: #7ab8e8;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 48px 20px 64px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans",
+          "Noto Sans JP", Meiryo, sans-serif;
+  }
+
+  .wrap { max-width: 720px; margin: 0 auto; }
+
+  header { margin-bottom: 40px; }
+
+  h1 {
+    margin: 0 0 8px;
+    font-size: 1.75rem;
+    letter-spacing: 0.01em;
+  }
+
+  .tagline { margin: 0; color: var(--muted); }
+
+  h2 {
+    margin: 0 0 16px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  ul.tools {
+    list-style: none;
+    margin: 0 0 40px;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+  }
+
+  .tool {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+
+  .tool h3 { margin: 0 0 6px; font-size: 1.0625rem; }
+
+  .tool h3 a { color: var(--accent); text-decoration: none; }
+  .tool h3 a:hover { text-decoration: underline; }
+
+  .tool p { margin: 0 0 10px; color: var(--muted); font-size: 0.9375rem; }
+
+  .repo {
+    font-size: 0.8125rem;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .repo:hover { color: var(--fg); border-bottom-color: var(--muted); }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    font-size: 0.875rem;
+    color: var(--muted);
+  }
+  footer a { color: inherit; }
+</style>
 </head>
 <body>
-<h1>shmuto.github.io</h1>
-<p>準備中です。</p>
+<div class="wrap">
+
+  <header>
+    <h1>shmuto</h1>
+    <p class="tagline">ブラウザだけで動くネットワーク系のツールを置いています。<br>
+      どれも入力したデータはサーバーに送られず、手元のブラウザ内だけで処理されます。</p>
+  </header>
+
+  <main>
+    <h2>Tools</h2>
+    <ul class="tools">
+
+      <li class="tool">
+        <h3><a href="https://shmuto.github.io/bgpshark/">🦈 BGPShark</a></h3>
+        <p>BGP セッションのトラブルシュートに特化した pcap アナライザ。OPEN / UPDATE /
+          NOTIFICATION などを Wireshark を開かずに解析できます。</p>
+        <a class="repo" href="https://github.com/shmuto/bgpshark">GitHub</a>
+      </li>
+
+      <li class="tool">
+        <h3><a href="https://shmuto.github.io/mib-browser/">SNMP MIB Browser</a></h3>
+        <p>MIB ファイルをまとめて読み込み、1 つの OID ツリーにマージして閲覧・検索できる
+          MIB ブラウザ。</p>
+        <a class="repo" href="https://github.com/shmuto/mib-browser">GitHub</a>
+      </li>
+
+      <li class="tool">
+        <h3><a href="https://shmuto.github.io/difftaro/">difftaro</a></h3>
+        <p>ブラウザで完結する diff ツール。テキスト・ファイル・JSON の比較に対応し、
+          外部ライブラリもビルドも不要です。</p>
+        <a class="repo" href="https://github.com/shmuto/difftaro">GitHub</a>
+      </li>
+
+    </ul>
+  </main>
+
+  <footer>
+    <a href="https://github.com/shmuto">github.com/shmuto</a>
+  </footer>
+
+</div>
 </body>
 </html>
